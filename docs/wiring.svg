@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="100%" height="100%" font-family="sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="540" rx="12" fill="#f8fafc"/>
+  <text x="30" y="38" font-size="20" font-weight="bold" fill="#1e293b">DualSense 物理オートクリッカー 実体配線図 (Arduino Uno R3)</text>
+  <text x="30" y="60" font-size="13" fill="#64748b">※コンデンサとタクトスイッチはブレッドボード上に配置（スイッチ・コンデンサ無しでもサーボ3本直結で動作可能）</text>
+
+  <!-- ================= ARDUINO UNO R3 ================= -->
+  <g transform="translate(40, 100)" filter="url(#shadow)">
+    <!-- Board PCB -->
+    <rect x="0" y="0" width="290" height="380" rx="10" fill="#008184" stroke="#005f61" stroke-width="3"/>
+    <!-- USB Port -->
+    <rect x="-15" y="30" width="45" height="55" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+    <!-- DC Jack -->
+    <rect x="-10" y="295" width="50" height="60" rx="4" fill="#1e293b"/>
+    <!-- Title -->
+    <text x="45" y="55" font-size="22" font-weight="bold" fill="#ffffff" letter-spacing="1">ARDUINO</text>
+    <text x="45" y="78" font-size="16" font-weight="bold" fill="#e2e8f0">UNO R3 (互換)</text>
+    <!-- ATmega328P IC -->
+    <rect x="75" y="190" width="70" height="150" rx="4" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="110" cy="205" r="5" fill="#334155"/>
+    <text x="110" y="270" font-size="11" fill="#94a3b8" text-anchor="middle" transform="rotate(-90 110 270)">ATMEGA328P</text>
+
+    <!-- Onboard LED (D13) -->
+    <rect x="210" y="112" width="12" height="8" rx="2" fill="#facc15" stroke="#ca8a04"/>
+    <text x="198" y="120" font-size="10" fill="#fef08a" text-anchor="end">L (D13)</text>
+
+    <!-- Right Header (Digital Pins) -->
+    <rect x="255" y="35" width="22" height="210" fill="#1e293b"/>
+    <!-- Pin labels & holes (Digital) -->
+    <g font-size="11" font-family="monospace" fill="#ffffff" text-anchor="end">
+      <text x="248" y="55">GND</text>   <circle cx="266" cy="51" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="75">D13</text>   <circle cx="266" cy="71" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="95">D12</text>   <circle cx="266" cy="91" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="115">~D11</text> <circle cx="266" cy="111" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="135">~D10</text> <circle cx="266" cy="131" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="155" font-weight="bold" fill="#fde047">~D9</text>  <circle cx="266" cy="151" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="248" y="175">D8</text>   <circle cx="266" cy="171" r="4" fill="#0f172a" stroke="#94a3b8"/>
+
+      <text x="248" y="205">D7</text>   <circle cx="266" cy="201" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="225">~D6</text>  <circle cx="266" cy="221" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="245">~D5</text>  <circle cx="266" cy="241" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="265">D4</text>   <circle cx="266" cy="261" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="285">~D3</text>  <circle cx="266" cy="281" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="305" font-weight="bold" fill="#93c5fd">D2</text>   <circle cx="266" cy="301" r="5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"/>
+      <text x="248" y="325">D1/TX</text><circle cx="266" cy="321" r="4" fill="#0f172a" stroke="#94a3b8"/>
+      <text x="248" y="345">D0/RX</text><circle cx="266" cy="341" r="4" fill="#0f172a" stroke="#94a3b8"/>
+    </g>
+    <rect x="255" y="190" width="22" height="165" fill="none" stroke="#334155"/>
+
+    <!-- Left/Bottom Header (Power Pins) -->
+    <rect x="12" y="135" width="22" height="130" fill="#1e293b"/>
+    <g font-size="11" font-family="monospace" fill="#ffffff" text-anchor="start">
+      <circle cx="23" cy="151" r="4" fill="#0f172a" stroke="#94a3b8"/> <text x="40" y="155">3.3V</text>
+      <circle cx="23" cy="175" r="5" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/> <text x="40" y="179" font-weight="bold" fill="#fca5a5">5V</text>
+      <circle cx="23" cy="199" r="5" fill="#1e293b" stroke="#ffffff" stroke-width="1.5"/> <text x="40" y="203" font-weight="bold" fill="#cbd5e1">GND</text>
+      <circle cx="23" cy="223" r="4" fill="#0f172a" stroke="#94a3b8"/> <text x="40" y="227">GND</text>
+      <circle cx="23" cy="247" r="4" fill="#0f172a" stroke="#94a3b8"/> <text x="40" y="251">VIN</text>
+    </g>
+  </g>
+
+  <!-- ================= BREADBOARD ================= -->
+  <g transform="translate(420, 190)" filter="url(#shadow)">
+    <rect x="0" y="0" width="430" height="280" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="15" y="22" font-size="13" font-weight="bold" fill="#475569">ブレッドボード</text>
+
+    <!-- Power Rails Top -->
+    <line x1="25" y1="38" x2="405" y2="38" stroke="#ef4444" stroke-width="2"/>
+    <text x="12" y="47" font-size="14" font-weight="bold" fill="#ef4444">+</text>
+    <text x="412" y="47" font-size="11" font-weight="bold" fill="#ef4444">5Vライン</text>
+
+    <line x1="25" y1="78" x2="405" y2="78" stroke="#3b82f6" stroke-width="2"/>
+    <text x="13" y="74" font-size="16" font-weight="bold" fill="#3b82f6">-</text>
+    <text x="412" y="74" font-size="11" font-weight="bold" fill="#1e293b">GNDライン</text>
+
+    <!-- Power Rail Holes -->
+    <g fill="#334155">
+      <!-- + Rail (y=50) -->
+      <circle cx="50" cy="50" r="3.5"/><circle cx="90" cy="50" r="3.5"/><circle cx="130" cy="50" r="3.5"/><circle cx="170" cy="50" r="3.5"/><circle cx="210" cy="50" r="3.5"/><circle cx="250" cy="50" r="3.5"/><circle cx="290" cy="50" r="3.5"/><circle cx="330" cy="50" r="3.5"/>
+      <!-- - Rail (y=68) -->
+      <circle cx="50" cy="68" r="3.5"/><circle cx="90" cy="68" r="3.5"/><circle cx="130" cy="68" r="3.5"/><circle cx="170" cy="68" r="3.5"/><circle cx="210" cy="68" r="3.5"/><circle cx="250" cy="68" r="3.5"/><circle cx="290" cy="68" r="3.5"/><circle cx="330" cy="68" r="3.5"/>
+    </g>
+
+    <!-- Center Divider -->
+    <rect x="15" y="165" width="400" height="14" rx="3" fill="#e2e8f0"/>
+
+    <!-- Vertical Column Guides -->
+    <g stroke="#e2e8f0" stroke-width="6" stroke-linecap="round">
+      <line x1="90" y1="105" x2="90" y2="150"/>
+      <line x1="130" y1="105" x2="130" y2="150"/>
+      <line x1="230" y1="105" x2="230" y2="150"/>
+      <line x1="270" y1="105" x2="270" y2="150"/>
+      <line x1="350" y1="105" x2="350" y2="150"/>
+    </g>
+
+    <!-- Electrolytic Capacitor on Power Rail -->
+    <g transform="translate(130, 50)">
+      <!-- Leads -->
+      <line x1="0" y1="0" x2="20" y2="-15" stroke="#94a3b8" stroke-width="2.5"/>
+      <line x1="40" y1="18" x2="32" y2="-15" stroke="#94a3b8" stroke-width="2.5"/>
+      <!-- Capacitor Body -->
+      <rect x="8" y="-52" width="32" height="38" rx="4" fill="#1e3a8a" stroke="#172554" stroke-width="2"/>
+      <!-- Minus stripe -->
+      <rect x="31" y="-52" width="9" height="38" rx="2" fill="#cbd5e1"/>
+      <text x="35.5" y="-28" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">-</text>
+      <text x="18" y="-28" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">+</text>
+      <text x="24" y="-60" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">コンデンサ (100〜470μF)</text>
+    </g>
+
+    <!-- Tactile Switch across center -->
+    <g transform="translate(218, 138)">
+      <!-- Switch legs -->
+      <circle cx="12" cy="-12" r="4" fill="#64748b"/>
+      <circle cx="52" cy="-12" r="4" fill="#64748b"/>
+      <circle cx="12" cy="55" r="4" fill="#64748b"/>
+      <circle cx="52" cy="55" r="4" fill="#64748b"/>
+      <!-- Body -->
+      <rect x="4" y="-4" width="56" height="50" rx="5" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+      <circle cx="32" cy="21" r="14" fill="#1e293b"/>
+      <text x="32" y="75" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">タクトスイッチ</text>
+      <text x="32" y="91" font-size="11" fill="#64748b" text-anchor="middle">(連打 ON / OFF)</text>
+    </g>
+
+    <!-- Switch GND jumper on breadboard: from col 270 (y=105) to GND rail (250, 68) -->
+    <path d="M 270 105 C 270 85, 250 85, 250 68" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="270" cy="105" r="4" fill="#1e293b"/>
+    <circle cx="250" cy="68" r="4" fill="#1e293b"/>
+  </g>
+
+  <!-- ================= SERVO MOTOR (SG90) ================= -->
+  <g transform="translate(650, 45)" filter="url(#shadow)">
+    <!-- Mounting tabs -->
+    <rect x="-15" y="38" width="150" height="12" rx="2" fill="#2563eb" stroke="#1d4ed8"/>
+    <!-- Body -->
+    <rect x="0" y="15" width="120" height="65" rx="6" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="60" y="45" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">SG90 互換</text>
+    <text x="60" y="63" font-size="11" fill="#dbeafe" text-anchor="middle">マイクロサーボ</text>
+    <!-- Shaft & Horn -->
+    <circle cx="95" cy="15" r="14" fill="#1d4ed8"/>
+    <rect x="88" y="-12" width="62" height="14" rx="7" fill="#ffffff" stroke="#94a3b8" stroke-width="2" transform="rotate(-12 95 -5)"/>
+    <circle cx="95" cy="-5" r="4" fill="#cbd5e1"/>
+    <!-- DualSense Button Illustration -->
+    <rect x="148" y="-15" width="36" height="12" rx="3" fill="#475569"/>
+    <text x="166" y="-22" font-size="11" font-weight="bold" fill="#334155" text-anchor="middle">DualSense ボタン</text>
+  </g>
+
+  <!-- ================= WIRES ================= -->
+  <!-- 1. Arduino 5V (63, 275) -> Breadboard + Rail (470, 240) -->
+  <path d="M 63 275 L 20 275 L 20 505 L 390 505 L 390 240 L 470 240" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="470" cy="240" r="4.5" fill="#ef4444"/>
+
+  <!-- 2. Arduino GND (63, 299) -> Breadboard - Rail (510, 258) -->
+  <path d="M 63 299 L 10 299 L 10 520 L 405 520 L 405 258 L 510 258" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="510" cy="258" r="4.5" fill="#1e293b"/>
+
+  <!-- 3. Arduino D9 (306, 251) -> Servo Signal (Orange/Yellow) -->
+  <path d="M 306 251 L 375 251 L 375 102 L 650 102" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="495" y="95" font-size="12" font-weight="bold" fill="#d97706">橙/黄: PWM信号 (D9)</text>
+
+  <!-- 4. Servo VCC (Red) -> Breadboard + Rail (710, 240) -->
+  <path d="M 650 88 L 610 88 L 610 155 L 710 155 L 710 240" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="710" cy="240" r="4.5" fill="#ef4444"/>
+  <text x="615" y="145" font-size="12" font-weight="bold" fill="#dc2626">赤: 5V電源</text>
+
+  <!-- 5. Servo GND (Brown/Black) -> Breadboard - Rail (750, 258) -->
+  <path d="M 650 74 L 625 74 L 625 130 L 750 130 L 750 258" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="750" cy="258" r="4.5" fill="#78350f"/>
+  <text x="640" y="122" font-size="12" font-weight="bold" fill="#78350f">茶/黒: GND</text>
+
+  <!-- 6. Arduino D2 (306, 401) -> Breadboard Tactile Switch Left Leg (col 230 -> x=650, y=295) -->
+  <path d="M 306 401 L 365 401 L 365 295 L 650 295" fill="none" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="650" cy="295" r="4.5" fill="#3b82f6"/>
+  <text x="480" y="288" font-size="12" font-weight="bold" fill="#2563eb">青: スイッチ信号 (D2)</text>
+</svg>

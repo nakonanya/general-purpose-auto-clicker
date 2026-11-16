@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "general-purpose-auto-clicker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 120,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -10,
+      "left": 330,
+      "attrs": { "horn": "single" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 210,
+      "left": 360,
+      "attrs": { "color": "blue", "label": "START / STOP" }
+    }
+  ],
+  "connections": [
+    [ "uno:5V", "servo1:V+", "red", [ "v30", "h180", "v-250" ] ],
+    [ "uno:GND.1", "servo1:GND", "brown", [ "v-40", "h140" ] ],
+    [ "uno:9", "servo1:PWM", "orange", [ "v-60", "h130" ] ],
+    [ "uno:2", "btn1:1.l", "blue", [ "v-20", "h110", "v130" ] ],
+    [ "uno:GND.2", "btn1:2.l", "black", [ "v40", "h200", "v-90" ] ]
+  ],
+  "dependencies": {}
+}
